@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المحادثات | SkillSwap</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container" style="width:calc(100% - 32px);max-width:none">
+      <a href="index.html" class="brand" dir="ltr"><img src="img/logo.png" alt="شعار SkillSwap"><b>Skill<span>Swap</span></b></a>
+      <div class="nav-actions">
+        <span class="muted">🔔 3</span>
+        <a href="profile.html" class="user-mini"><div class="avatar">د</div><b>ديما أحمد</b></a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dash">
+    <aside class="sidebar">
+      <a href="dashboard.html">🏠 لوحة التحكم</a>
+      <a href="skills.html">🔍 البحث عن مهارات</a>
+      <a href="chat.html" class="active">💬 المحادثات</a>
+      <a href="profile.html">👤 الملف الشخصي</a>
+      <a href="index.html">↩ تسجيل الخروج</a>
+    </aside>
+
+    <main class="main">
+      <div class="card chat">
+        <!-- قائمة المحادثات -->
+        <div class="chat-list">
+          <div class="item active" data-name="انسجام علي">
+            <div class="avatar" style="background:#e98fc0">ا</div>
+            <div><b>انسجام علي</b><div class="muted">JavaScript ⇄ Figma</div></div>
+          </div>
+          <div class="item" data-name="غزل فهد">
+            <div class="avatar" style="background:#6fbf9a">غ</div>
+            <div><b>غزل فهد</b><div class="muted">HTML ⇄ Java</div></div>
+          </div>
+          <div class="item" data-name="سخاء عبدالله">
+            <div class="avatar" style="background:#7c5cdb">س</div>
+            <div><b>سخاء عبدالله</b><div class="muted">SQL ⇄ JavaScript</div></div>
+          </div>
+        </div>
+
+        <!-- نافذة المحادثة -->
+        <div class="chat-box">
+          <div class="chat-head">
+            <div><b id="chatName">انسجام علي</b><div class="muted">جلسة الأحد 25 أكتوبر — 7:00 م</div></div>
+            <span class="badge badge-green">متصلة</span>
+          </div>
+          <div class="messages" id="messages">
+            <div class="msg me">مرحباً انسجام، جاهزة لجلسة JavaScript اليوم؟<small>18:40</small></div>
+            <div class="msg them">أهلاً ديما، نعم جاهزة! وبعدها أشرح لك Figma<small>18:45</small></div>
+            <div class="msg me">ممتاز، نبدأ بالمتغيرات والدوال<small>18:46</small></div>
+            <div class="msg them">تمام، أرسلت لك ملف التصميم اللي بنشتغل عليه 📎<small>18:50</small></div>
+          </div>
+          <form class="chat-input" id="chatForm">
+            <input type="text" id="msgInput" class="form-control" placeholder="اكتبي رسالتك..." autocomplete="off">
+            <button type="submit" class="btn btn-primary">إرسال</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

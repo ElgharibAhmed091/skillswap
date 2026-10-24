@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إنشاء حساب | SkillSwap</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand" dir="ltr"><img src="img/logo.png" alt="شعار SkillSwap"><b>Skill<span>Swap</span></b></a>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-light btn-sm">تسجيل الدخول</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="auth-page">
+    <div class="card auth-card" style="width:min(520px,100%)">
+      <img src="img/logo.png" alt="" class="logo">
+      <h2>إنشاء حساب جديد</h2>
+      <p class="sub">انضم إلى مجتمع تبادل المهارات</p>
+
+      <form data-validate data-redirect="dashboard.html" novalidate>
+        <div class="alert alert-error">يرجى تصحيح الحقول المحددة باللون الأحمر</div>
+        <div class="alert alert-success">تم إنشاء الحساب بنجاح! جارٍ تحويلك للوحة التحكم...</div>
+
+        <div class="form-group">
+          <label for="name">الاسم الكامل</label>
+          <input type="text" id="name" class="form-control" data-rule="name" placeholder="مثال: ديما أحمد">
+          <div class="error-msg">الاسم يجب أن يكون 3 أحرف على الأقل</div>
+        </div>
+
+        <div class="form-group">
+          <label for="regEmail">البريد الإلكتروني</label>
+          <input type="email" id="regEmail" class="form-control" data-rule="email" placeholder="example@email.com">
+          <div class="error-msg">أدخل بريداً إلكترونياً صحيحاً</div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="major">التخصص</label>
+            <select id="major" class="form-control" data-rule="select">
+              <option value="">اختر التخصص</option>
+              <option>تطوير الويب</option>
+              <option>علوم الحاسب</option>
+              <option>تصميم الجرافيك</option>
+              <option>الشبكات</option>
+              <option>الأمن السيبراني</option>
+              <option>قواعد البيانات</option>
+            </select>
+            <div class="error-msg">اختر تخصصك</div>
+          </div>
+          <div class="form-group">
+            <label for="level">المستوى</label>
+            <select id="level" class="form-control" data-rule="select">
+              <option value="">اختر المستوى</option>
+              <option>مبتدئ</option>
+              <option>متوسط</option>
+              <option>متقدم</option>
+            </select>
+            <div class="error-msg">اختر مستواك</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="regPass">كلمة المرور <button type="button" class="btn btn-light btn-sm" data-toggle-pass="regPass" style="padding:2px 10px">إظهار</button></label>
+          <input type="password" id="regPass" class="form-control" data-rule="password" placeholder="8 أحرف على الأقل">
+          <div class="error-msg">8 أحرف على الأقل وتحتوي على حروف وأرقام</div>
+        </div>
+
+        <div class="form-group">
+          <label for="regPass2">تأكيد كلمة المرور</label>
+          <input type="password" id="regPass2" class="form-control" data-rule="match" data-target="regPass" placeholder="أعد كتابة كلمة المرور">
+          <div class="error-msg">كلمتا المرور غير متطابقتين</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">إنشاء الحساب</button>
+      </form>
+
+      <p class="auth-foot">لديك حساب بالفعل؟ <a href="login.html">سجّل الدخول</a></p>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

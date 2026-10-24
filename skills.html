@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>البحث عن مهارات | SkillSwap</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container" style="width:calc(100% - 32px);max-width:none">
+      <a href="index.html" class="brand" dir="ltr"><img src="img/logo.png" alt="شعار SkillSwap"><b>Skill<span>Swap</span></b></a>
+      <div class="nav-actions">
+        <span class="muted">🔔 3</span>
+        <a href="profile.html" class="user-mini"><div class="avatar">د</div><b>ديما أحمد</b></a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dash">
+    <aside class="sidebar">
+      <a href="dashboard.html">🏠 لوحة التحكم</a>
+      <a href="skills.html" class="active">🔍 البحث عن مهارات</a>
+      <a href="chat.html">💬 المحادثات</a>
+      <a href="profile.html">👤 الملف الشخصي</a>
+      <a href="index.html">↩ تسجيل الخروج</a>
+    </aside>
+
+    <main class="main">
+      <div class="page-head">
+        <div>
+          <h1>البحث عن مهارات</h1>
+          <p>ابحثي عن مهارة تريدين تعلّمها وأرسلي طلب تبادل</p>
+        </div>
+        <span class="badge badge-purple" id="resultCount"></span>
+      </div>
+
+      <div class="filters">
+        <input type="search" id="searchSkill" class="form-control" placeholder="🔍 ابحثي باسم المهارة أو المستخدم...">
+        <select id="levelFilter" class="form-control" style="flex:0 1 180px">
+          <option value="">كل المستويات</option>
+          <option>مبتدئ</option>
+          <option>متوسط</option>
+          <option>متقدم</option>
+        </select>
+      </div>
+
+      <div class="filters">
+        <button class="chip active" data-cat="الكل">الكل</button>
+        <button class="chip" data-cat="البرمجة">البرمجة</button>
+        <button class="chip" data-cat="تطوير الويب">تطوير الويب</button>
+        <button class="chip" data-cat="التصميم">التصميم</button>
+        <button class="chip" data-cat="قواعد البيانات">قواعد البيانات</button>
+        <button class="chip" data-cat="الشبكات والأمن">الشبكات والأمن</button>
+        <button class="chip" data-cat="المهارات الشخصية">المهارات الشخصية</button>
+      </div>
+
+      <div class="grid grid-3" id="skillsGrid"></div>
+      <div class="empty" id="emptyState">لا توجد نتائج مطابقة، جرّبي كلمة بحث أخرى</div>
+    </main>
+  </div>
+
+  <!-- نافذة طلب التبادل -->
+  <div class="modal" id="requestModal">
+    <div class="card">
+      <h3>طلب تبادل مهارة</h3>
+      <p class="muted" style="margin-bottom:16px">تطلبين تعلّم <b id="modalSkill"></b> من <b id="modalUser"></b></p>
+      <form id="requestForm" novalidate>
+        <div class="form-group">
+          <label for="offerSkill">المهارة التي ستقدّمينها</label>
+          <select id="offerSkill" class="form-control" data-rule="select">
+            <option value="">اختاري مهارة</option>
+            <option>JavaScript</option>
+            <option>HTML &amp; CSS</option>
+          </select>
+          <div class="error-msg">اختاري المهارة التي ستقدّمينها</div>
+        </div>
+        <div class="form-group">
+          <label for="reqMsg">رسالة (اختياري)</label>
+          <textarea id="reqMsg" class="form-control" rows="3" placeholder="عرّفي بنفسك واقترحي موعداً مناسباً"></textarea>
+        </div>
+        <div style="display:flex;gap:10px">
+          <button type="submit" class="btn btn-primary">إرسال الطلب</button>
+          <button type="button" class="btn btn-light" data-close>إلغاء</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

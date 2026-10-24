@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم | SkillSwap</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container" style="width:calc(100% - 32px);max-width:none">
+      <a href="index.html" class="brand" dir="ltr"><img src="img/logo.png" alt="شعار SkillSwap"><b>Skill<span>Swap</span></b></a>
+      <div class="nav-actions">
+        <span class="muted">🔔 3</span>
+        <a href="profile.html" class="user-mini"><div class="avatar">د</div><b>ديما أحمد</b></a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dash">
+    <aside class="sidebar">
+      <a href="dashboard.html" class="active">🏠 لوحة التحكم</a>
+      <a href="skills.html">🔍 البحث عن مهارات</a>
+      <a href="chat.html">💬 المحادثات</a>
+      <a href="profile.html">👤 الملف الشخصي</a>
+      <a href="index.html">↩ تسجيل الخروج</a>
+    </aside>
+
+    <main class="main">
+      <div class="page-head">
+        <div>
+          <h1>أهلاً ديما 👋</h1>
+          <p>هذا ملخص نشاطك على المنصة</p>
+        </div>
+        <a href="skills.html" class="btn btn-primary">+ طلب تبادل جديد</a>
+      </div>
+
+      <!-- إحصائيات -->
+      <div class="grid grid-4" style="margin-bottom:20px">
+        <div class="card stat"><div class="icon bg-purple">📚</div><div><b>2</b><small>مهارات أُعلّمها</small></div></div>
+        <div class="card stat"><div class="icon bg-yellow">🎯</div><div><b>1</b><small>مهارات أتعلّمها</small></div></div>
+        <div class="card stat"><div class="icon bg-green">🤝</div><div><b>3</b><small>جلسات مكتملة</small></div></div>
+        <div class="card stat"><div class="icon bg-pink">⭐</div><div><b>4.3</b><small>متوسط التقييم</small></div></div>
+      </div>
+
+      <div class="grid grid-2">
+        <!-- الطلبات الواردة -->
+        <div class="card">
+          <h3>طلبات التبادل الواردة</h3>
+          <div class="list-item">
+            <div class="user-mini">
+              <div class="avatar" style="background:#6fbf9a">غ</div>
+              <div><b>غزل فهد</b><div class="muted">تقدّم Java ← تطلب HTML &amp; CSS</div></div>
+            </div>
+            <div class="req-actions">
+              <button class="btn btn-primary btn-sm" data-action="accept">قبول</button>
+              <button class="btn btn-light btn-sm" data-action="reject">رفض</button>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="user-mini">
+              <div class="avatar" style="background:#e98fc0">س</div>
+              <div><b>سخاء عبدالله</b><div class="muted">تقدّم SQL ← تطلب JavaScript</div></div>
+            </div>
+            <div class="req-actions">
+              <button class="btn btn-primary btn-sm" data-action="accept">قبول</button>
+              <button class="btn btn-light btn-sm" data-action="reject">رفض</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- اقتراحات المطابقة -->
+        <div class="card">
+          <h3>مقترحات المطابقة الذكية</h3>
+          <div class="list-item">
+            <div class="user-mini">
+              <div class="avatar" style="background:#e98fc0">ا</div>
+              <div><b>انسجام علي</b><div class="muted">تُعلّم Figma — المهارة التي تريدين تعلّمها</div></div>
+            </div>
+            <span class="score">92%</span>
+          </div>
+          <div class="list-item">
+            <div class="user-mini">
+              <div class="avatar" style="background:#7c5cdb">و</div>
+              <div><b>وضحى سالم</b><div class="muted">تُعلّم Python</div></div>
+            </div>
+            <span class="score">78%</span>
+          </div>
+          <div class="list-item">
+            <div class="user-mini">
+              <div class="avatar" style="background:#f4c35a">ر</div>
+              <div><b>ريناس خالد</b><div class="muted">تُعلّم أساسيات الشبكات</div></div>
+            </div>
+            <span class="score">64%</span>
+          </div>
+        </div>
+
+        <!-- الجلسات القادمة -->
+        <div class="card">
+          <h3>الجلسات القادمة</h3>
+          <div class="list-item">
+            <div><b>JavaScript ⇄ Figma</b><div class="muted">مع انسجام علي — الأحد 25 أكتوبر، 7:00 م</div></div>
+            <span class="badge badge-purple">مجدولة</span>
+          </div>
+          <div class="list-item">
+            <div><b>SQL ⇄ JavaScript</b><div class="muted">مع سخاء عبدالله — الثلاثاء 27 أكتوبر، 6:00 م</div></div>
+            <span class="badge badge-purple">مجدولة</span>
+          </div>
+        </div>
+
+        <!-- آخر النشاطات -->
+        <div class="card">
+          <h3>آخر النشاطات</h3>
+          <div class="list-item"><div>⭐ قيّمتك غزل فهد بـ 5 نجوم</div><span class="muted">منذ يومين</span></div>
+          <div class="list-item"><div>✅ اكتملت جلسة HTML مع غزل</div><span class="muted">منذ يومين</span></div>
+          <div class="list-item"><div>💬 رسالة جديدة من انسجام</div><span class="muted">منذ 3 أيام</span></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
