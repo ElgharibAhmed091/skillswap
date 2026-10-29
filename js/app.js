@@ -38,6 +38,44 @@ function showToast(text) {
   setTimeout(() => t.classList.remove('show'), 2600);
 }
 
+// ---------- المستخدم الحالي (يُحفظ في المتصفح) ----------
+const DEFAULT_USER = { name: 'ديما أحمد', email: 'dima@skillswap.sa', major: 'تطوير الويب', level: 'متقدم' };
+
+function saveData(key, value) {
+  try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) {}
+}
+function loadData(key) {
+  try { return JSON.parse(localStorage.getItem(key)); } catch (e) { return null; }
+}
+function currentUser() {
+  return loadData('ss_current') || DEFAULT_USER;
+}
+// اسم مبدئي من البريد لو المستخدم لم يسجّل حساباً من قبل (مثال: alaa.ali@mail.com ← Alaa Ali)
+function nameFromEmail(email) {
+  return email.split('@')[0].replace(/[._\-0-9]+/g, ' ').trim()
+    .split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') || 'مستخدم';
+}
+
+// عرض بيانات المستخدم في كل عنصر عليه data-user
+function showUser() {
+  const u = currentUser();
+  const values = {
+    name: u.name,
+    first: u.name.split(' ')[0],
+    initial: u.name.trim().charAt(0),
+    email: u.email,
+    major: u.major || 'غير محدد',
+    level: u.level || 'غير محدد'
+  };
+  $$('[data-user]').forEach(el => { el.textContent = values[el.dataset.user]; });
+}
+showUser();
+
+// تسجيل الخروج: حذف المستخدم الحالي
+$$('[data-logout]').forEach(a => a.addEventListener('click', () => {
+  try { localStorage.removeItem('ss_current'); } catch (e) {}
+}));
+
 // ---------- قائمة الجوال ----------
 const toggle = $('.menu-toggle');
 if (toggle) toggle.addEventListener('click', () => $('.nav-links').classList.toggle('open'));
@@ -82,6 +120,25 @@ $$('form[data-validate]').forEach(form => {
       alertErr && alertErr.classList.add('show');
       return;
     }
+    // حفظ المستخدم عند إنشاء حساب أو تسجيل الدخول
+    if (form.id === 'registerForm') {
+      const user = {
+        name: $('#name', form).value.trim(),
+        email: $('#regEmail', form).value.trim().toLowerCase(),
+        major: $('#major', form).value,
+        level: $('#level', form).value
+      };
+      const users = loadData('ss_users') || {};
+      users[user.email] = user;
+      saveData('ss_users', users);
+      saveData('ss_current', user);
+    }
+    if (form.id === 'loginForm') {
+      const email = $('#email', form).value.trim().toLowerCase();
+      const users = loadData('ss_users') || {};
+      saveData('ss_current', users[email] || { name: nameFromEmail(email), email: email, major: '', level: '' });
+    }
+
     alertOk && alertOk.classList.add('show');
     const next = form.dataset.redirect;
     if (next) setTimeout(() => (window.location.href = next), 1000);

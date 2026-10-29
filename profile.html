@@ -13,7 +13,7 @@
       <a href="index.html" class="brand" dir="ltr"><img src="img/logo.png" alt="شعار SkillSwap"><b>Skill<span>Swap</span></b></a>
       <div class="nav-actions">
         <span class="muted">🔔 3</span>
-        <a href="profile.html" class="user-mini"><div class="avatar">د</div><b>ديما أحمد</b></a>
+        <a href="profile.html" class="user-mini"><div class="avatar" data-user="initial">د</div><b data-user="name">ديما أحمد</b></a>
       </div>
     </div>
   </nav>
@@ -24,16 +24,16 @@
       <a href="skills.html">🔍 البحث عن مهارات</a>
       <a href="chat.html">💬 المحادثات</a>
       <a href="profile.html" class="active">👤 الملف الشخصي</a>
-      <a href="index.html">↩ تسجيل الخروج</a>
+      <a href="index.html" data-logout>↩ تسجيل الخروج</a>
     </aside>
 
     <main class="main">
       <div class="card">
         <div class="profile-head">
-          <div class="avatar lg">د</div>
+          <div class="avatar lg" data-user="initial">د</div>
           <div style="flex:1">
-            <h2>ديما أحمد</h2>
-            <p class="muted">تطوير الويب • مستوى متقدم • متاحة الأحد - الثلاثاء مساءً</p>
+            <h2 data-user="name">ديما أحمد</h2>
+            <p class="muted"><span data-user="major">تطوير الويب</span> • مستوى <span data-user="level">متقدم</span> • متاحة الأحد - الثلاثاء مساءً</p>
             <p><span class="stars">★★★★☆</span> <b>4.3</b> <span class="muted">(3 تقييمات)</span></p>
           </div>
           <button class="btn btn-outline btn-sm">تعديل البيانات</button>
@@ -88,7 +88,7 @@
         <!-- التقييمات -->
         <section class="tab-panel" id="tabReviews">
           <div class="review">
-            <div class="user-mini"><div class="avatar" style="background:#e98fc0">ا</div><div><b>انسجام علي</b> <span class="stars">★★★★★</span><div class="muted">ديما ملتزمة بالموعد وشرحها ممتاز</div></div></div>
+            <div class="user-mini"><div class="avatar" style="background:#e98fc0">ا</div><div><b>انسجام علي</b> <span class="stars">★★★★★</span><div class="muted">ملتزمة بالموعد وشرحها ممتاز</div></div></div>
           </div>
           <div class="review">
             <div class="user-mini"><div class="avatar" style="background:#6fbf9a">غ</div><div><b>غزل فهد</b> <span class="stars">★★★★★</span><div class="muted">من أفضل الجلسات</div></div></div>
@@ -100,8 +100,8 @@
 
         <!-- البيانات الشخصية -->
         <section class="tab-panel" id="tabInfo">
-          <div class="list-item"><span class="muted">البريد الإلكتروني</span><b>dima@skillswap.sa</b></div>
-          <div class="list-item"><span class="muted">التخصص</span><b>تطوير الويب</b></div>
+          <div class="list-item"><span class="muted">البريد الإلكتروني</span><b data-user="email">dima@skillswap.sa</b></div>
+          <div class="list-item"><span class="muted">التخصص</span><b data-user="major">تطوير الويب</b></div>
           <div class="list-item"><span class="muted">اللغة</span><b>العربية</b></div>
           <div class="list-item"><span class="muted">أوقات التوفّر</span><b>الأحد - الثلاثاء مساءً</b></div>
           <div class="list-item"><span class="muted">تاريخ الانضمام</span><b>أكتوبر 2026</b></div>
